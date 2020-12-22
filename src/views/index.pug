@@ -3,6 +3,24 @@ html
     head        
         meta(charset="UTF-8")
         title Annonymous Email
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous")
+
     body
-        h1#myHeading This is a pug template
-        p.firstParagraph I love this template!!!
+        div.container
+            div.page-header
+                h1 Anonymous Email Submissions
+                p.lead Request welfare supplies
+            div.row
+                form.col-md-12(action="/submit" method="post")
+                    div.form-group
+                        label(for="name") Name
+                        input(type="text" name="name" class="form-control" id="name" placeholder="Name")
+                    div.form-group
+                        label(for="email") Email
+                        input(type="email" name="email" class="form-control" id="email" placeholder="Name")
+                    div.form-group
+                        label(for="message") Name
+                        textarea(class="form-control" name="message" id="message" rows="3" placeholder="Tell us what you need!")
+                    div.form-group
+                        button(type="submit" class="btn btn-primary mb-2") Submit
